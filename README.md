@@ -9,6 +9,11 @@ Dieses Package enthaelt keine File-System-Logik. Es beschreibt nur die Contracts
 - `FileInterface<TContent>`
 - `DirectoryInterface`
 - `TypedDirectoryInterface`
+- `JsonDirectoryInterface`
+- `HtmlDirectoryInterface`
+- `TextDirectoryInterface`
+- `TableDirectoryInterface`
+- `CodeDirectoryInterface`
 - `JsonFileInterface`
 - `TextFileInterface`
 - `TableFileInterface`
@@ -59,23 +64,49 @@ Dadurch kombiniert eine JSON-Datei die normalen Datei-Funktionen mit den JSON-Da
 
 ## Typed Directory
 
-`TypedDirectoryInterface` erweitert `DirectoryInterface` um typisierte Helfer:
+Die spezifischen Directory-Interfaces kapseln die typisierten Helfer pro Dateibereich.
+
+### JsonDirectoryInterface
 
 - `getJson(fileName)`
 - `deleteJson(fileName)`
 - `getJsonFiles()`
+
+Diese Funktionen geben `JsonFileInterface` bzw. `JsonFileInterface[]` zurueck.
+
+### HtmlDirectoryInterface
+
 - `getHtml(fileName)`
 - `deleteHtml(fileName, fileType)`
 - `getHtmlFiles()`
+
+Diese Funktionen geben `HtmlFileInterface` bzw. `HtmlFileInterface[]` zurueck.
+
+### TextDirectoryInterface
+
 - `getTextFiles()`
 - `deleteTextFile(fileName)`
 - `deleteTxt(fileName)`
+
+Diese Funktionen geben `TextFileInterface[]` bzw. `boolean` zurueck.
+
+### TableDirectoryInterface
+
 - `getCsvFiles()`
 - `deleteCsv(fileName)`
 - `deleteCSV(fileName)`
+
+Diese Funktionen geben `TableFileInterface[]` bzw. `boolean` zurueck.
+
+### CodeDirectoryInterface
+
 - `getTypeScriptFiles()`
 - `deleteTypeScript(fileName)`
 - `deleteTS(fileName)`
+
+Diese Funktionen geben `CodeFileInterface[]` bzw. `boolean` zurueck.
+
+`TypedDirectoryInterface` erweitert `DirectoryInterface` und fasst diese spezifischen Interfaces zusammen.
 
 ## Build
 
