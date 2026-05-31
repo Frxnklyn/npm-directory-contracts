@@ -6,3 +6,4 @@ export * from "./TextDirectoryInterface.js";
 export * from "./TableDirectoryInterface.js";
 export * from "./CodeDirectoryInterface.js";
 export * from "./TypedDirectoryInterface.js";
+export * from "./GitDirectoryInterface.js";

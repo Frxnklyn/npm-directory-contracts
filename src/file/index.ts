@@ -4,4 +4,6 @@ export * from "./TextFileInterface.js";
 export * from "./TableFileInterface.js";
 export * from "./CodeFileInterface.js";
 export * from "./HtmlFileInterface.js";
+export * from "./GitignoreFileInterface.js";
+export * from "./GitmodulesFileInterface.js";
 export * from "./FileTypeMap.js";

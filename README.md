@@ -19,6 +19,8 @@ Dieses Package enthaelt keine File-System-Logik. Es beschreibt nur die Contracts
 - `TableFileInterface`
 - `CodeFileInterface`
 - `HtmlFileInterface`
+- `GitignoreFileInterface`
+- `GitmodulesFileInterface`
 
 ## DataTypes
 
@@ -107,6 +109,27 @@ Diese Funktionen geben `TableFileInterface[]` bzw. `boolean` zurueck.
 Diese Funktionen geben `CodeFileInterface[]` bzw. `boolean` zurueck.
 
 `TypedDirectoryInterface` erweitert `DirectoryInterface` und fasst diese spezifischen Interfaces zusammen.
+
+## Git Directory
+
+`GitDirectoryInterface` erweitert `TypedDirectoryInterface` um Git-Dateien:
+
+- `getGitignore(fileName)` -> `GitignoreFileInterface`
+- `deleteGitignore(fileName)` -> `boolean`
+- `getGitmodules(fileName)` -> `GitmodulesFileInterface`
+- `deleteGitmodules(fileName)` -> `boolean`
+
+`GitignoreFileInterface` bietet:
+
+- `addIgnore(input)`
+- `deleteIgnore(input)`
+
+`GitmodulesFileInterface` bietet:
+
+- `getSubmodules()`
+- `addSubmodule(submodule)`
+- `deleteSubmodule(nameOrPath)`
+- `getSubmodule(nameOrPath)`
 
 ## Build
 

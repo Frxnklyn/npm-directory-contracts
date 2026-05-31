@@ -1,5 +1,7 @@
 import type { CodeFileInterface } from "./CodeFileInterface.js";
 import type { FileInterface } from "./FileInterface.js";
+import type { GitignoreFileInterface } from "./GitignoreFileInterface.js";
+import type { GitmodulesFileInterface } from "./GitmodulesFileInterface.js";
 import type { HtmlFileInterface } from "./HtmlFileInterface.js";
 import type { JsonFileInterface } from "./JsonFileInterface.js";
 import type { TableFileInterface } from "./TableFileInterface.js";
@@ -12,6 +14,8 @@ export interface FileTypeMap {
   ts: CodeFileInterface;
   html: HtmlFileInterface;
   htm: HtmlFileInterface;
+  gitignore: GitignoreFileInterface;
+  gitmodules: GitmodulesFileInterface;
 }
 
 export type KnownDirectoryFileType = keyof FileTypeMap;
