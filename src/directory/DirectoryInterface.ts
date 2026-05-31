@@ -8,13 +8,13 @@ import type { FolderStructure } from "./FolderStructure.js";
 
 export interface DirectoryInterface<TDirectory = unknown> {
   getPath(): string;
-  setPath(targetPath: string): this;
-  resetPath(): this;
+  setPath(targetPath: string): TDirectory;
+  resetPath(): TDirectory;
 
-  stepBack(levels?: number): this;
+  stepBack(levels?: number): TDirectory;
   getParent(levels?: number): TDirectory;
   getChild(subPath: string): TDirectory;
-  moveTo(subPath: string): this;
+  moveTo(subPath: string): TDirectory;
   navigateToPath(targetPath: string): string;
 
   addFolder(folderName: string): TDirectory;
