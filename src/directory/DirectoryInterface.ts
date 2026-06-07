@@ -6,18 +6,18 @@ import type {
 } from "../file/index.js";
 import type { FolderStructure } from "./FolderStructure.js";
 
-export interface DirectoryInterface<TDirectory = unknown> {
+export interface DirectoryInterface {
   getPath(): string;
-  setPath(targetPath: string): TDirectory;
-  resetPath(): TDirectory;
+  setPath(targetPath: string): this;
+  resetPath(): this;
 
-  stepBack(levels?: number): TDirectory;
-  getParent(levels?: number): TDirectory;
-  getChild(subPath: string): TDirectory;
-  moveTo(subPath: string): TDirectory;
+  stepBack(levels?: number): this;
+  getParent(levels?: number): this;
+  getChild(subPath: string): this;
+  moveTo(subPath: string): this;
   navigateToPath(targetPath: string): string;
 
-  addFolder(folderName: string): TDirectory;
+  addFolder(folderName: string): this;
   deleteFolder(folderName: string): void;
 
   addFile<K extends KnownDirectoryFileType>(fileName: string, fileType: K): FileInterface;
@@ -34,7 +34,7 @@ export interface DirectoryInterface<TDirectory = unknown> {
 
   getFolders(): string[];
   getContents(): string[];
-  getDirectories(): TDirectory[];
+  getDirectories(): this[];
   getFiles(): AnyFileInterface[];
 
   getFileOfType<K extends KnownDirectoryFileType>(fileType: K): FileTypeMap[K][];
