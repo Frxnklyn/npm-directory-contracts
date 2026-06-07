@@ -5,8 +5,8 @@ import type { JsonDirectoryInterface } from "./JsonDirectoryInterface.js";
 import type { TableDirectoryInterface } from "./TableDirectoryInterface.js";
 import type { TextDirectoryInterface } from "./TextDirectoryInterface.js";
 
-export interface TypedDirectoryInterface<TDirectory = unknown>
-  extends DirectoryInterface<TDirectory>,
+export interface TypedDirectoryInterface
+  extends DirectoryInterface,
     JsonDirectoryInterface,
     HtmlDirectoryInterface,
     TextDirectoryInterface,

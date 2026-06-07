@@ -4,8 +4,7 @@ import type {
 } from "../file/index.js";
 import type { TypedDirectoryInterface } from "./TypedDirectoryInterface.js";
 
-export interface GitDirectoryInterface<TDirectory = unknown>
-  extends TypedDirectoryInterface<TDirectory> {
+export interface GitDirectoryInterface extends TypedDirectoryInterface {
   getGitignore(fileName?: string): GitignoreFileInterface;
   deleteGitignore(fileName?: string): boolean;
 
